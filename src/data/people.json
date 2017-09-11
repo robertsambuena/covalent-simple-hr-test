@@ -1,0 +1,53 @@
+[
+  {
+    "id": "1",
+    "username": "Wolverine",
+    "member_since": "1975-08-10",
+    "first_name": "James",
+    "last_name": "Howlett",
+    "status_id": "1",
+    "superpower": "Accelerated healing",
+    "gender_id": "1",
+    "country_id": "38",
+    "email": "james.howlett@thexmen.org",
+    "phone": "+1-234-567-8900",
+    "home_address": "1407 Graymalkin Lane, Salem Center",
+    "marital_status_id": "1",
+    "deployments": "Vietnam war veteran",
+    "weak_points": "Can die by drowning"
+  },
+  {
+    "id": "2",
+    "username": "ProfessorX",
+    "member_since": "1963-01-01",
+    "first_name": "Charles Francis",
+    "last_name": "Xavier",
+    "status_id": "1",
+    "superpower": "Mind reading",
+    "gender_id": "1",
+    "country_id": "38",
+    "email": "charles.xavier@thexmen.org",
+    "phone": "+1-234-567-8900",
+    "home_address": "1407 Graymalkin Lane, Salem Center",
+    "marital_status_id": "1",
+    "deployments": "General Manager",
+    "weak_points": "Physically disabled"
+  },
+  {
+    "id": "3",
+    "username": "Magnetto",
+    "member_since": "1963-01-01",
+    "first_name": "Magnetto",
+    "last_name": "Magnetto",
+    "status_id": "1",
+    "superpower": "Mind reading",
+    "gender_id": "1",
+    "country_id": "38",
+    "email": "charles.xavier@thexmen.org",
+    "phone": "+1-234-567-8900",
+    "home_address": "1407 Graymalkin Lane, Salem Center",
+    "marital_status_id": "1",
+    "deployments": "General Manager",
+    "weak_points": "Physically disabled"
+  }
+]

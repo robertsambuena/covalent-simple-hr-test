@@ -1,0 +1,51 @@
+<md-card style="padding: 20px" tdMediaToggle="gt-xs" [mediaClasses]="['push']">
+  <ng-template tdLoading="features.load">
+    <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm">
+      <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
+        <span class="md-title">User List</span>
+      </span>
+      <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
+        <span *ngIf="(selectable && !selectedRows.length) || !selectable" class="md-title"></span>
+        <span *ngIf="selectedRows.length && selectable" class="md-body-1">{{selectedRows.length}} item(s) selected</span>
+      </span>
+      <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search($event)" flex>
+      </td-search-box>
+
+      <md-select placeholder="State" [(ngModel)]="filterStatus" (ngModelChange)="filter()">
+         <md-option *ngFor="let stat of status" [value]="stat.id">{{ stat.name }}</md-option>
+      </md-select>
+    </div>
+    <md-divider></md-divider>
+    <td-data-table
+      #dataTable
+      [data]="filteredData"
+      [columns]="columns"
+      [selectable]="selectable"
+      [clickable]="clickable"
+      [multiple]="multiple"
+      [sortable]="true"
+      [sortBy]="sortBy"
+      [(ngModel)]="selectedRows"
+      [sortOrder]="sortOrder"
+      (sortChange)="sort($event)">
+    </td-data-table>
+    <div class="md-padding" *ngIf="!dataTable.hasData" layout="row" layout-align="center center">
+      <h3>No results to display.</h3>
+    </div>
+    <td-paging-bar #pagingBar [pageSizes]="[5, 10, 15, 20]" [total]="filteredTotal" (change)="page($event)">
+      <span td-paging-bar-label hide-xs>Row per page:</span>
+      {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
+    </td-paging-bar>
+
+    <a md-fab color="accent" class="mat-fab-bottom-right fixed" [routerLink]="['add']">
+        <md-icon>add</md-icon>
+    </a>
+
+    <div style="padding: 15px 8px" layout="row" layout-align="start center" class="pad-left-sm pad-right-sm">
+      <span class="push-left-sm">
+        <button (click)="openConfirm()" [disabled]="!selectedRows.length" class="mat-raised-button">DELETE</button>
+      </span>
+    </div>
+
+  </ng-template>
+</md-card>
